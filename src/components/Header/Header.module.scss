@@ -1,0 +1,69 @@
+@import '../../utils/variables';
+
+.header {
+  background-color: $main-blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $white;
+  padding: 1.85vh 2.08vw;
+
+  &__logo {
+    width: 6.98vw;
+    height: 2.5vw;
+  }
+
+  &__container {
+    display: flex;
+    gap: 1.04vw;
+    align-items: center;
+  }
+
+  &__user {
+    display: flex;
+    gap: 0.83vw;
+  }
+
+  &__userpic {
+    align-self: center;
+    border-radius: 42px;
+    width: 2.1875vw;
+    height: 2.1875vw;
+    object-fit: cover;
+  }
+
+  &__userinfo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__username {
+    padding: 0;
+    margin: 0;
+    // font-size: 18px;
+    // line-height: 24px;
+    font-size: 0.9375vw;
+    line-height: 1.25vw;
+  }
+
+  &__userposition {
+    padding: 0;
+    margin: 0;
+    // font-size: 12px;
+    // line-height: 18px;
+    font-size: 0.625vw;
+    line-height: 0.9375vw;
+  }
+
+  &__logout {
+    width: 1.67vw;
+    height: 1.67vw;
+    background-image: url(../../images/sign_out.svg);
+    background-position: center;
+    background-size: contain;
+    background-color: inherit;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+}
