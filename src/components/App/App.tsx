@@ -35,7 +35,12 @@ function App() {
     return (
         <div className={styles.page}>
           <Routes>
-            <Route path="/" element={<Dashboard />} />
+            <Route index element={<Dashboard />} />
+            <Route path="signin" />
+            <Route path="forecast" />
+            <Route path="statistics" />
+  
+            <Route path="*" />
           </Routes>
         </div>
     );
