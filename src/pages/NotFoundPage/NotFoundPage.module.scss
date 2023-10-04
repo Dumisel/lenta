@@ -1,6 +1,6 @@
-@import '../../utils/variables';
+@import '../../utils/variables.scss';
 
-.dashboard {
+.wrapper {
   display: flex;
   padding: 0 2.08vw 0;
   height: 1080px;
@@ -19,11 +19,11 @@
 }
 
 .title {
-  margin: 10.83vw 0 1.66vw 7.29vw;
+  margin: 0 0 1.66vw 7.29vw;
   padding: 0;
   width: 39.53vw;
   color: #000;
-  font-family: Gilroy;
+  font-family: $fontFamily;
   font-size: 22px;
   font-style: normal;
   font-weight: 600;
@@ -35,7 +35,7 @@
   padding: 0;
   width: 39.53vw;
   color: #000;
-  font-family: Gilroy;
+  font-family: $fontFamily;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;

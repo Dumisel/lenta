@@ -3,9 +3,15 @@ import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Dashboard } from '../Dashboard/Dasboard';
 import api from '../../utils/api';
+
 import { Layout } from '../Layout/Layout';
 import SignInPage from '../../pages/SignInPage/SignInPage';
 import ForecastPage from '../../pages/ForecastPage/ForecastPage';
+import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
+import InternetErrorPage from '../../pages/InternetErrorPage/InternetErrorPage';
+import DataErrorPage from '../../pages/DataErrorPage/DataErrorPage';
+import ExportErrorPage from '../../pages/ExportErrorPage/ExportErrorPage';
+import PrintErrorPage from '../../pages/PrintErrorPage/PrintErrorPage';
 
 function App() {
   useEffect(() => {
@@ -57,8 +63,13 @@ function App() {
             path='/statistics'
             element={<Dashboard />}
           />
-
-          <Route path='*' />
+          
+           <Route path="*" element={<NotFoundPage />} />
+             {/** Тестовые страницы с ошибками */}
+            <Route path="internet" element={<InternetErrorPage />} />
+            <Route path="data" element={<DataErrorPage />} />
+            <Route path="print" element={<PrintErrorPage />} />
+            <Route path="export" element={<ExportErrorPage />} />
         </Route>
       </Routes>
     </div>
