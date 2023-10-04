@@ -1,12 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchSignIn } from './userAPI';
 
-export interface ISavedFilter {
-  TK: string[];
-  categories: string[];
-  subcategories: string[];
-  sku: string[];
-}
+// export interface ISavedFilter {
+//   TK: string[];
+//   categories: string[];
+//   subcategories: string[];
+//   sku: string[];
+// }
 
 export interface IUserState {
   status: 'idle' | 'success' | 'loading' | 'failed';
@@ -15,23 +15,21 @@ export interface IUserState {
     login: string;
     token: string;
     name: string;
-    position: string;
-    savedFilters: ISavedFilter[];
+    photo: string;
   };
 }
 
-export const signInUser = createAsyncThunk(
-  '@@user/signIn',
-  async (data: any, { fulfillWithValue, rejectWithValue }) => {
-    try {
-      const response = await fetchSignIn(data);
-      const json = await response.json();
-      return fulfillWithValue(json.access);
-    } catch (error: unknown) {
-      return rejectWithValue(error);
-    }
-  }
-);
+export const signInUser = createAsyncThunk('@@user/signIn', async (data: any, { fulfillWithValue, rejectWithValue }) => {
+  // try {
+  //   const response = await fetchSignIn(data);
+  //   const json = await response.json();
+  //   return fulfillWithValue(json.access);
+  // } catch (error: unknown) {
+  //   return rejectWithValue(error);
+  // }
+  const response = await fetchSignIn(data);
+  return fulfillWithValue(response);
+});
 
 const initialState: IUserState = {
   status: 'idle',
@@ -40,8 +38,7 @@ const initialState: IUserState = {
     login: '',
     token: '',
     name: '',
-    position: '',
-    savedFilters: [],
+    photo: '',
   },
 };
 
@@ -79,5 +76,4 @@ export const { signOut } = userSlice.actions;
 export const userReducer = userSlice.reducer;
 
 export const selectUser = (state: { user: IUserState }) => state.user.user;
-export const selectUserStatus = (state: { user: IUserState }) =>
-  state.user.status;
+export const selectUserStatus = (state: { user: IUserState }) => state.user.status;

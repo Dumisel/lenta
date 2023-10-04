@@ -1,0 +1,13 @@
+@import '../../utils/variables';
+
+.table {
+  max-width: 2188px;
+  overflow-x: scroll;
+}
+
+.rowLight {
+  background-color: $white;
+}
+.rowDark {
+  background-color: $bluish;
+}
