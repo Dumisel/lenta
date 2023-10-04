@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import styles from './SignInPage.module.scss';
 
 import eye_opened from '../../images/eye_opened.svg';
-import Header from '../../components/Header/Header';
 import { useAppDispatch } from '../../utils/reduxHooks';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { signInUser } from '../../services/redux/slices/user/user';

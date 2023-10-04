@@ -3,8 +3,9 @@ import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Dashboard } from '../Dashboard/Dasboard';
 import api from '../../utils/api';
-import SignInPage from '../../pages/SignInPage/SignInPage';
 import { Layout } from '../Layout/Layout';
+import SignInPage from '../../pages/SignInPage/SignInPage';
+import ForecastPage from '../../pages/ForecastPage/ForecastPage';
 
 function App() {
   useEffect(() => {
@@ -48,8 +49,14 @@ function App() {
             path='/signin'
             element={<SignInPage />}
           />
-          <Route path='/forecast' />
-          <Route path='/statistics' />
+          <Route
+            path='/forecast'
+            element={<ForecastPage />}
+          />
+          <Route
+            path='/statistics'
+            element={<Dashboard />}
+          />
 
           <Route path='*' />
         </Route>
