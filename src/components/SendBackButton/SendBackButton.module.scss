@@ -1,0 +1,24 @@
+@import '../../utils/variables.scss';
+
+.backButton {
+  background-color: $white;
+  border-radius: 12px;
+  color: $lenta-bg-text-logo;
+  margin: 7.08vw 0 0.83px 6.04vw;
+  padding: 0.83vw 1.25vw;
+  border: none;
+  display: inline-flex;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.backButton:hover {
+  opacity: 0.5;
+}
+.backButton:focus {
+  opacity: 0.5;
+}

@@ -3,6 +3,11 @@ import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Dashboard } from '../Dashboard/Dasboard';
 import api from '../../utils/api';
+import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
+import InternetErrorPage from '../../pages/InternetErrorPage/InternetErrorPage';
+import DataErrorPage from '../../pages/DataErrorPage/DataErrorPage';
+import ExportErrorPage from '../../pages/ExportErrorPage/ExportErrorPage';
+import PrintErrorPage from '../../pages/PrintErrorPage/PrintErrorPage';
 
 function App() {
     useEffect(() => {
@@ -40,7 +45,12 @@ function App() {
             <Route path="forecast" />
             <Route path="statistics" />
   
-            <Route path="*" />
+            <Route path="*" element={<NotFoundPage />} />
+             {/** Тестовые страницы с ошибками */}
+            <Route path="internet" element={<InternetErrorPage />} />
+            <Route path="data" element={<DataErrorPage />} />
+            <Route path="print" element={<PrintErrorPage />} />
+            <Route path="export" element={<ExportErrorPage />} />
           </Routes>
         </div>
     );
