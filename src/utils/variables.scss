@@ -7,11 +7,12 @@ $black: #000000;
 
 $dark-blue: #001e64;
 $main-blue: #003c96;
+$lenta-bg-text-logo: #003d96;
 $light-blue: #b4c8ff;
 $bluish: rgba(227, 234, 255, 0.4);
 
 //Typographic
-$fontFamily: google fonts, sans-serif;
+$fontFamily: Gilroy, google fonts, sans-serif;
 
 @mixin text($font-size, $line-height, $font-weight: 400) {
   font-size: $font-size;
