@@ -13,9 +13,11 @@ import {
 } from 'redux-persist';
 
 import { userReducer } from './slices/user/user';
+import filterReducer from './slices/filter/filter'
 
 const rootReducer = combineReducers({
   user: userReducer,
+  filter: filterReducer,
 });
 
 const persistConfig = {

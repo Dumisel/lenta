@@ -12,6 +12,7 @@ import InternetErrorPage from '../../pages/InternetErrorPage/InternetErrorPage';
 import DataErrorPage from '../../pages/DataErrorPage/DataErrorPage';
 import ExportErrorPage from '../../pages/ExportErrorPage/ExportErrorPage';
 import PrintErrorPage from '../../pages/PrintErrorPage/PrintErrorPage';
+import ForecastChartPage from '../../pages/ForecastChartPage/ForecastChartPage';
 
 function App() {
   useEffect(() => {
@@ -57,7 +58,7 @@ function App() {
           />
           <Route
             path='/forecast'
-            element={<ForecastPage />}
+            element={<ForecastChartPage />}
           />
           <Route
             path='/statistics'

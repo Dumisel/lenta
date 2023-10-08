@@ -23,8 +23,9 @@
 }
 
 .controls {
-  @include flex(center, space-between);
+  @include flex(center);
   padding: 3.7vh 0 2.22vh;
+  justify-content: end;
 }
 
 .switch {
