@@ -1,8 +1,16 @@
 @import '../../utils/variables';
 
-.table {
-  max-width: 2188px;
-  overflow-x: scroll;
+.columnTitle {
+  @include font-filter-headings;
+  width: 4.57vw;
+  padding: 20px;
+  white-space: nowrap;
+}
+
+.cell {
+  @include font-main-text;
+  white-space: inherit;
+  // width: 4.57vw;
 }
 
 .rowLight {

@@ -1,16 +1,26 @@
 @import '../../utils/variables.scss';
 
 .forecast {
-  padding: 4.44vh 1.67vw 0;
-  // max-width: 100vh;
+  padding: 4.44vh 0 0 1.67vw;
+  // max-width: calc(100vw - $sidebarWidth);
   // overflow: scroll;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 0 0 1.67vw;
+  max-width: calc(100vw - $sidebarWidth - 1.67vw * 2);
+  overflow: hidden;
 }
 
 .labels {
   background-color: $light-grey;
   display: flex;
   gap: 8px;
+  max-width: calc(100vw - $sidebarWidth - 2.08vw * 2 - 1.67vw);
 }
+
 .label {
   @include font-main-text;
   background-color: white;
@@ -24,6 +34,7 @@
 .controls {
   @include flex(center, space-between);
   padding: 3.7vh 0 2.22vh;
+  max-width: calc(100vw - $sidebarWidth - 2.08vw * 2 - 1.67vw);
 }
 
 .switch {
