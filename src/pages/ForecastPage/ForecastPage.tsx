@@ -6,7 +6,6 @@ import { Button } from '../../components/ui/Button/Button';
 import ForecastTable from '../../components/Table/Table';
 import LabelsMenu from '../../components/Labels/LabelsMenu';
 import Filter from '../../components/Filter/Filter';
-import Filter from '../../components/Filter/Sidebar';
 import { useReactToPrint } from 'react-to-print';
 import { exportToExcel } from '../../utils/utils';
 import { forecastDataMany } from '../../utils/forecast_archive';
