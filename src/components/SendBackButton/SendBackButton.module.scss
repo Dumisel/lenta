@@ -14,11 +14,17 @@
   gap: 8px;
   flex-shrink: 0;
   cursor: pointer;
+  transition: color 0.3s;
 }
 
-.backButton:hover {
-  opacity: 0.5;
+.buttonButton:hover {
+  color: rgba(180, 200, 255, 1);
 }
-.backButton:focus {
-  opacity: 0.5;
+
+.buttonButton:focus {
+  color: rgba(0, 31, 99, 1);
+}
+
+.buttonButton:disabled {
+  color: rgba(191, 191, 191, 1);
 }
