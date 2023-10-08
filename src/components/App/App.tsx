@@ -61,7 +61,7 @@ function App() {
             element={<ForecastPage />}
           />
           <Route
-            path='/forecast/chart'
+            path='/forecast'
             element={<ForecastChartPage />}
           />
           <Route
