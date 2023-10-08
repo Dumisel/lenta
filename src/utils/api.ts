@@ -1,6 +1,6 @@
 import { categoriesData } from './categories';
 import { forecastData } from './forecast_archive';
-import salesData from './sales.json';
+import { salesData } from './sales';
 import { storesData } from './stores';
 import { BASE_URL, HEADERS} from './constants';
 import {HttpHeaders} from './types';
