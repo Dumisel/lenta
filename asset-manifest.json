@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/lenta/static/css/main.bd00f300.css",
+    "main.js": "/lenta/static/js/main.1a69d9f1.js",
+    "static/media/internetConnectionError.png": "/lenta/static/media/internetConnectionError.14e0d3a7758f0728d211.png",
+    "static/media/notFoundError.png": "/lenta/static/media/notFoundError.157bf4658aaf239606ff.png",
+    "static/media/welcome.png": "/lenta/static/media/welcome.73610e514def4b869cd9.png",
+    "static/media/dataError.png": "/lenta/static/media/dataError.c92b1d5011bbebb0265b.png",
+    "static/media/printError.png": "/lenta/static/media/printError.613d888ab624c4daa281.png",
+    "static/media/exportError.png": "/lenta/static/media/exportError.85f6c2fc5d4ea83c3b16.png",
+    "static/media/signin_pic.png": "/lenta/static/media/signin_pic.f6962eb5c46aa3b64477.png",
+    "static/media/Gilroy-Regular.ttf": "/lenta/static/media/Gilroy-Regular.fa652e766b6a85a1f9cb.ttf",
+    "static/media/Gilroy-Semibold.ttf": "/lenta/static/media/Gilroy-Semibold.41fa36c3c8e966b35423.ttf",
+    "static/media/logo.svg": "/lenta/static/media/logo.b1db506a6970f5b165f8357936f73db6.svg",
+    "static/media/Gilroy-Semibold.woff": "/lenta/static/media/Gilroy-Semibold.5b042906a8b58ec4633e.woff",
+    "static/media/Gilroy-Regular.woff": "/lenta/static/media/Gilroy-Regular.ebe86c0337572553acea.woff",
+    "static/media/Gilroy-Semibold.woff2": "/lenta/static/media/Gilroy-Semibold.7726b19d33f1b7f4135a.woff2",
+    "static/media/Gilroy-Regular.woff2": "/lenta/static/media/Gilroy-Regular.f6c9931fabe5a6eb3307.woff2",
+    "static/media/filter.svg": "/lenta/static/media/filter.1cb5f32993acfeb50d67.svg",
+    "static/media/eye.svg": "/lenta/static/media/eye.b66600854a896f7728b3.svg",
+    "static/media/print.svg": "/lenta/static/media/print.8e0833b5c580639007ed.svg",
+    "index.html": "/lenta/index.html",
+    "static/media/download.svg": "/lenta/static/media/download.2003cd94b5b6614b8320.svg",
+    "static/media/sign_out.svg": "/lenta/static/media/sign_out.16c5521d271ea18cf741.svg",
+    "static/media/eye_opened.svg": "/lenta/static/media/eye_opened.a797265c697144a69d3a74d08f1de281.svg",
+    "main.bd00f300.css.map": "/lenta/static/css/main.bd00f300.css.map",
+    "main.1a69d9f1.js.map": "/lenta/static/js/main.1a69d9f1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bd00f300.css",
+    "static/js/main.1a69d9f1.js"
+  ]
+}
