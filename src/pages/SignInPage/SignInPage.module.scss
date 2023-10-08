@@ -11,7 +11,7 @@
   &__title {
     @extend %zero-spaces;
     @include font-headers;
-    padding: calc(5.93vh + $headerHeight) 0 2.22vh;
+    padding: 5.93vh 0 2.22vh;
   }
 
   &__form {

@@ -108,7 +108,7 @@ export default function SignInPage() {
           className={styles.signIn__button}
           type='submit'
           disabled={!isDirty || !isValid}>
-          Продолжить
+          Войти
         </button>
       </form>
     </main>
