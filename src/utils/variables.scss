@@ -57,8 +57,9 @@ $lineHeight: 137.5%;
   @include text($fontSizeXS);
 }
 
-// heights
+// heights&widths
 $headerHeight: calc(4.44vh + 2.7vw);
+$sidebarWidth: 14.27vw;
 
 // icons
 $iconSizeL: 1.67vw; // 32px
