@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/lenta/static/css/main.bd00f300.css",
-    "main.js": "/lenta/static/js/main.1a69d9f1.js",
+    "main.js": "/lenta/static/js/main.46c545fb.js",
     "static/media/internetConnectionError.png": "/lenta/static/media/internetConnectionError.14e0d3a7758f0728d211.png",
     "static/media/notFoundError.png": "/lenta/static/media/notFoundError.157bf4658aaf239606ff.png",
     "static/media/welcome.png": "/lenta/static/media/welcome.73610e514def4b869cd9.png",
@@ -24,10 +24,10 @@
     "static/media/sign_out.svg": "/lenta/static/media/sign_out.16c5521d271ea18cf741.svg",
     "static/media/eye_opened.svg": "/lenta/static/media/eye_opened.a797265c697144a69d3a74d08f1de281.svg",
     "main.bd00f300.css.map": "/lenta/static/css/main.bd00f300.css.map",
-    "main.1a69d9f1.js.map": "/lenta/static/js/main.1a69d9f1.js.map"
+    "main.46c545fb.js.map": "/lenta/static/js/main.46c545fb.js.map"
   },
   "entrypoints": [
     "static/css/main.bd00f300.css",
-    "static/js/main.1a69d9f1.js"
+    "static/js/main.46c545fb.js"
   ]
 }
