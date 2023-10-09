@@ -23,11 +23,11 @@
   margin: 0;
   padding: 0;
   color: $white;
-  text-transform: capitalize; 
+  text-transform: capitalize;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 122.222%
+  line-height: 122.222%;
 }
 
 .legend {
@@ -40,10 +40,10 @@
   gap: 24px;
 }
 
-.legendBlock{
+.legendBlock {
   max-width: 10.62vw;
   display: flex;
-  padding: 20px 28px;
+  padding: 1.86vh 1.45vw;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -53,9 +53,7 @@
 }
 
 .textBold {
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 144.444%;
+  @include font-filter-headings;
 }
 
 .tooltip {
@@ -66,7 +64,7 @@
   gap: 10px;
   color: $black;
   border-radius: 8px;
-  background: var(--table-line-color-40, rgba(227, 234, 255, 0.40));
+  background: var(--table-line-color-40, rgba(227, 234, 255, 0.4));
 }
 
 .tooltipText {

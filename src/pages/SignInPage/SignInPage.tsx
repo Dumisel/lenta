@@ -4,7 +4,7 @@ import styles from './SignInPage.module.scss';
 import eye_opened from '../../images/eye_opened.svg';
 import { useAppDispatch } from '../../utils/reduxHooks';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { signInUser } from '../../services/redux/slices/user/user';
+import { setUser, signInUser } from '../../services/redux/slices/user/user';
 import { useNavigate } from 'react-router-dom';
 
 interface ISignInFields {
@@ -34,17 +34,28 @@ export default function SignInPage() {
     setIsPasswordHidden(!isPasswordHidden);
   }
 
-  console.log(isValid);
   const onSubmit: SubmitHandler<ISignInFields> = () => {
-    const formValues = getValues();
+    // const formValues = getValues();
 
-    dispatch(signInUser(formValues))
-      .unwrap()
-      .then((res) => {
-        console.log(res);
-        navigate('/');
+    // dispatch(signInUser(formValues))
+    //   .unwrap()
+    //   .then((res) => {
+    //     console.log(res);
+    //     navigate('/');
+    //   })
+    //   .catch((err) => console.log(err));
+
+    // пока не подключено апи
+    dispatch(
+      setUser({
+        name: getValues('login'),
+        login: getValues('login'),
+        token: '123qwe',
+        photo:
+          'https://sun9-north.userapi.com/sun9-78/s/v1/ig2/nqtA2B6RTvn847GOO7O7SukmarJ7cp966DVid-AqjZ_5p7tpwHUNucjRDay43XWfGvfRPmOdfvj9se_nTc6bR1wI.jpg?size=512x512&quality=95&type=album',
       })
-      .catch((err) => console.log(err));
+    );
+    navigate('/');
   };
 
   return (
@@ -54,7 +65,6 @@ export default function SignInPage() {
       <h1 className={styles.signIn__title}>Для входа введите логин и пароль</h1>
       <form
         className={styles.signIn__form}
-        // onSubmit={handleSubmit}
         onSubmit={handleSubmit(onSubmit)}
         noValidate>
         <input
@@ -69,7 +79,7 @@ export default function SignInPage() {
               message: 'Логин – обязательное поле',
             },
             minLength: {
-              value: 2,
+              value: 6,
               message: 'Логин слишком короткий',
             },
           })}
@@ -89,7 +99,7 @@ export default function SignInPage() {
                 message: 'Пароль – обязательное поле',
               },
               minLength: {
-                value: 2,
+                value: 8,
                 message: 'Пароль слишком короткий',
               },
             })}
@@ -101,6 +111,7 @@ export default function SignInPage() {
             className={styles.signIn__showPassword}
             type='button'
             onClick={togglePassword}
+            aria-label='show password'
             style={isPasswordHidden ? undefined : { backgroundImage: `url(${eye_opened})` }}
           />
         </div>

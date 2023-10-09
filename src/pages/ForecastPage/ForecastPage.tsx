@@ -1,8 +1,6 @@
-import { useState, useEffect, useRef, FC } from 'react';
+import { useRef, FC } from 'react';
 import styles from './ForecastPage.module.scss';
-import { useAppDispatch } from '../../utils/reduxHooks';
-import { Link, useNavigate } from 'react-router-dom';
-import { Button } from '../../components/ui/Button/Button';
+import { Link } from 'react-router-dom';
 import ForecastTable from '../../components/Table/Table';
 import LabelsMenu from '../../components/LabelsMenu/LabelsMenu';
 import Filter from '../../components/Filter/Filter';
@@ -11,8 +9,6 @@ import { exportToExcel } from '../../utils/utils';
 import { forecastDataMany } from '../../utils/forecast_archive';
 
 const ForecastPage: FC = () => {
-  const dispatch = useAppDispatch();
-
   const tableRef = useRef(null);
 
   const handlePrint = useReactToPrint({
@@ -38,7 +34,9 @@ const ForecastPage: FC = () => {
             <button className={styles.statistics}>Статистика прогнозов</button>
           </div>
           <div className={styles.buttons}>
-            <Link className={`${styles.button} ${styles.button_chart}`} to={'chart'}>
+            <Link
+              className={`${styles.button} ${styles.button_chart}`}
+              to={'chart'}>
               <p className={`${styles.button__text} ${styles.button__text_chart}`}>Построить график</p>
               <div className={`${styles.button__icon} ${styles.button__icon_chart}`}></div>
             </Link>
