@@ -25,7 +25,7 @@ export function exportToExcel(data: { data: ForecastItem[] }) {
   // Создаем новую книгу Excel
   const wb = XLSX.utils.book_new();
 
-  // Преобразуем данные в формат, понимаемый XLSX
+  // Преобразуем данные в формат для XLSX
   const wsData = data.data.map((item) => ({
     Store: item.store,
     SKU: item.sku,
