@@ -12,7 +12,7 @@ import {
   toggleSku,
   reset
 } from '../../services/redux/slices/filter/filter';
-import { AppDispatch, RootState } from '../../services/redux/store';
+import { RootState } from '../../services/redux/store';
 import styles from './Filter.module.scss';
 import { storesData } from '../../utils/stores';
 import { categoriesData } from '../../utils/categories';
@@ -30,18 +30,18 @@ const Filter: React.FC = () => {
     }
   };
 	
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useDispatch();
 
   const { selectedCities, selectedVenues, selectedGroups, selectedCategories, selectedSubcategories, selectedSku } = useSelector(
     (state: RootState) => state.filter
   );
-  const cities = storesData.data.map((item: { city: string; })=>item.city);
+  const cities = storesData.data.map((item)=>item.city);
   const filteredCities = Array.from(new Set(cities));
 
-  const stores = storesData.data.map((item: { store: any; })=>item.store);
+  const stores = storesData.data.map((item)=>item.store);
   const filteredStores = Array.from(new Set(stores));
 
-  const groups = categoriesData?.data.map((item: { group: any; })=>item.group);
+  const groups = categoriesData?.data.map((item)=>item.group);
   const filteredGroups = Array.from(new Set(groups));
 
   const handleCityToggle = (city: string) => {
