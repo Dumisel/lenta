@@ -1,5 +1,4 @@
-// FilterSidebar.tsx
-import React, { BaseSyntheticEvent } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectAllCities,
@@ -20,7 +19,6 @@ import { categoriesData } from '../../utils/categories';
 import caret from '../../images/arrow.svg'
 import FilterButton from '../ui/FilterButton/FilterButton';
 
-
 const Filter: React.FC = () => {
   const [openFilters, setOpenFilters] = React.useState<string[]>([]);
 
@@ -33,6 +31,7 @@ const Filter: React.FC = () => {
   };
 	
   const dispatch = useDispatch();
+
   const { selectedCities, selectedVenues, selectedGroups, selectedCategories, selectedSubcategories, selectedSku } = useSelector(
     (state: RootState) => state.filter
   );
