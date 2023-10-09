@@ -2,8 +2,8 @@
 
 .wrapper {
   display: flex;
-  padding: 0 2.08vw 0;
-  height: 1080px;
+  padding: 2.5vw 2.08vw 0;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -18,12 +18,18 @@
   left: 39.42vw;
 }
 
+.content {
+  margin: 7.08vw 0 0.83px 7.29vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.96vh;
+}
+
 .title {
-  margin: 0 0 1.66vw 7.29vw;
+  margin: 0;
   padding: 0;
   width: 39.53vw;
-  color: #000;
-  font-family: $fontFamily;
   font-size: 22px;
   font-style: normal;
   font-weight: 600;
@@ -31,11 +37,9 @@
 }
 
 .text {
-  margin: 0 0 0.83vw 7.29vw;
+  margin: 0;
   padding: 0;
   width: 39.53vw;
-  color: #000;
-  font-family: $fontFamily;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;

@@ -61,7 +61,7 @@ const BubblesBox: React.FC = () => {
         </button>
       ))}
       </div>
-      {labels.length > 7 && <button className={styles.more} onClick={toggleModal}>
+      {labels.length > 6 && <button className={styles.more} onClick={toggleModal}>
         <img className={styles.moreImg} src={more} alt='Развернуть' />
       </button>}
       {labels.length > 0 && showModal && (

@@ -86,6 +86,7 @@
   &_chart {
     color: $main-blue;
     background-color: $white;
+    text-decoration: none;
     transition: all 0.3s;
 
     &:hover {

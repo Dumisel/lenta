@@ -4,11 +4,11 @@
   background-color: $white;
   border-radius: 12px;
   color: $main-blue;
-  margin: 7.08vw 0 0.83px 6.04vw;
-  padding: 0.83vw 1.25vw;
+  margin: 0;
+  padding: 0;
   border: none;
-  display: inline-flex;
-  height: 56px;
+  display: flex;
+  height: 5.18vh;
   justify-content: center;
   align-items: center;
   gap: 8px;
@@ -17,14 +17,18 @@
   transition: color 0.3s;
 }
 
-.buttonButton:hover {
+.backButton:hover {
   color: rgba(180, 200, 255, 1);
 }
 
-.buttonButton:focus {
+.backButton:focus {
   color: rgba(0, 31, 99, 1);
 }
 
-.buttonButton:disabled {
+.backButton:disabled {
   color: rgba(191, 191, 191, 1);
+}
+
+.chart {
+  margin: 0;
 }

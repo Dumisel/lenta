@@ -59,6 +59,7 @@ const ForecastChart: React.FC = () => {
         <XAxis dataKey="date" tickSize={0} tickMargin={8}/>
         <YAxis tickSize={0} tickMargin={8} axisLine={false}/>
         <Tooltip
+            cursor={{fill: 'transparent'}}
             content={({ payload }) => (
               <div className={styles.tooltip}>
                 {payload && payload.map((item, index) => (

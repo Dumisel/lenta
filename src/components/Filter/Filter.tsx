@@ -1,5 +1,5 @@
 // FilterSidebar.tsx
-import React from 'react';
+import React, { BaseSyntheticEvent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectAllCities,
@@ -22,6 +22,16 @@ import FilterButton from '../ui/FilterButton/FilterButton';
 
 
 const Filter: React.FC = () => {
+  const [openFilters, setOpenFilters] = React.useState<string[]>([]);
+
+  const toggleFilter = (filterName: string) => {
+    if (openFilters.includes(filterName)) {
+      setOpenFilters(openFilters.filter((name) => name !== filterName));
+    } else {
+      setOpenFilters([...openFilters, filterName]);
+    }
+  };
+	
   const dispatch = useDispatch();
   const { selectedCities, selectedVenues, selectedGroups, selectedCategories, selectedSubcategories, selectedSku } = useSelector(
     (state: RootState) => state.filter
@@ -46,11 +56,10 @@ const Filter: React.FC = () => {
   const handleSelectAllCities = () => {
     const allCities = filteredCities.map((item) => item);
     dispatch(selectAllCities({ cities: allCities }));
+    setOpenFilters(allCities);
   };
 
   const handleSelectAllVenues = () => {
-    const allCities = filteredCities.map((item) => item);
-    dispatch(selectAllCities({ cities: allCities }));
     const allVenues = filteredStores.map((item) => item);
     dispatch(selectAllVenues({ venues: allVenues }));
   };
@@ -97,18 +106,20 @@ const Filter: React.FC = () => {
               />
               <span className={styles.checkmark}></span>
               <span className={styles.text}>{item}</span>
-              <img
-                className={`${styles.caret} ${
-                  selectedCities.includes(item) && styles.caretActive
-                }`}
-						    src={caret}
-						    alt="Стрелка вниз"
-              />
+              <button type="button" className={styles.arrow} onClick={() => toggleFilter(item)}>
+                <img
+                  className={`${styles.caret} ${
+                    openFilters.includes(item) && styles.caretActive
+                  }`}
+						      src={caret}
+						      alt="Стрелка вниз"
+                />
+              </button>
               </label>
 
             {/* Фильтр для выбора ТК */}
 
-            {selectedCities.includes(item) && (
+            {openFilters.includes(item) && (
               <ul className={`${styles.list} 
                               ${styles.listMargin} 
                               ${storesData.data
@@ -159,17 +170,19 @@ const Filter: React.FC = () => {
             />
               <span className={styles.checkmark}></span>
               <span className={styles.text}>{item}</span>
-              <img
-                className={`${styles.caret} ${
-                selectedGroups.includes(item) && styles.caretActive}`}
-						    src={caret}
-						    alt="Стрелка вниз"
-              />
+              <button type="button" className={styles.arrow} onClick={() => toggleFilter(item)}>
+                <img
+                  className={`${styles.caret} ${
+                    openFilters.includes(item) && styles.caretActive}`}
+						      src={caret}
+						      alt="Стрелка вниз"
+                />
+              </button>
             </label>
 
             {/* Фильтр для выбора категории */} 
 
-            {selectedGroups.includes(item) && (
+            {openFilters.includes(item) && (
             <ul className={`${styles.list} 
                             ${styles.listMargin} 
                             ${categoriesData.data
@@ -191,17 +204,19 @@ const Filter: React.FC = () => {
                     />
                       <span className={styles.checkmark}></span>
                       <span className={styles.text}>{categoryItem}</span>
-                      <img
-                        className={`${styles.caret} ${
-                        selectedCategories.includes(categoryItem) && styles.caretActive}`}
-						            src={caret}
-						            alt="Стрелка вниз"
-                      />
+                      <button type="button" className={styles.arrow} onClick={() => toggleFilter(categoryItem)}>
+                        <img
+                          className={`${styles.caret} ${
+                            openFilters.includes(categoryItem) && styles.caretActive}`}
+						              src={caret}
+						              alt="Стрелка вниз"
+                        />
+                      </button>
                     </label>
 
             {/* Фильтр для выбора подкатегории */} 
 
-            {selectedCategories.includes(categoryItem) && (
+            {openFilters.includes(categoryItem) && (
               <ul className={`${styles.list} 
                               ${styles.listMargin} 
                               ${categoriesData.data
@@ -223,17 +238,19 @@ const Filter: React.FC = () => {
                       />
                         <span className={styles.checkmark}></span>
                         <span className={styles.text}>{subcategoryItem}</span>
-                        <img
-                          className={`${styles.caret} ${
-                          selectedSubcategories.includes(subcategoryItem) && styles.caretActive}`}
-						              src={caret}
-						              alt="Стрелка вниз"
-                        />
+                        <button type="button" className={styles.arrow} onClick={() => toggleFilter(subcategoryItem)}>
+                          <img
+                            className={`${styles.caret} ${
+                              openFilters.includes(subcategoryItem) && styles.caretActive}`}
+						                src={caret}
+						                alt="Стрелка вниз"
+                          />
+                        </button>
                       </label>
 
             {/* Фильтр для выбора товара */} 
 
-            {selectedSubcategories.includes(subcategoryItem) && (
+            {openFilters.includes(subcategoryItem) && (
               <ul className={`${styles.list} 
                               ${styles.listMargin} 
                               ${categoriesData.data

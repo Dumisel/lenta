@@ -14,6 +14,7 @@
   display: flex;
   gap: 0.83vw;
   max-width: 71.77vw;
+  min-height: 3.51vh;
   overflow-x: hidden;
 }
 
@@ -30,6 +31,7 @@
   gap: 0.74vh;
   transition: background-color 0.3s;
   cursor: pointer;
+  text-transform: capitalize;
 }
 
 .label:hover {
@@ -51,7 +53,6 @@
 
 .more {
   margin: 0 0.83vw 0 0;
-  padding: 12px;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -67,12 +68,10 @@
 .box {
   position: absolute;
   top: 2.29vw;
-  right: calc(0 - width);
   display: flex;
   max-width: 74.63vw;
   padding: 1.25vw;;
-  justify-content: flex-end;
-  gap: 15px 16px;
+  gap: 1.38vh 0.83vw;
   flex-wrap: wrap;
   border-radius: 16px;
   box-shadow: 2px 2px 16px 0px rgba(0, 61, 150, 0.16);
