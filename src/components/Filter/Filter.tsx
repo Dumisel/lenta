@@ -41,7 +41,7 @@ const Filter: React.FC = () => {
   const stores = storesData.data.map((item)=>item.store);
   const filteredStores = Array.from(new Set(stores));
 
-  const groups = categoriesData?.data.map((item)=>item.group);
+  const groups = categoriesData.data.map((item)=>item.group);
   const filteredGroups = Array.from(new Set(groups));
 
   const handleCityToggle = (city: string) => {
