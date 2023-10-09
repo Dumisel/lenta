@@ -1,63 +1,21 @@
 @import '../../utils/variables.scss';
 
-.forecast {
+.forecastChart {
   padding: 4.44vh 1.67vw 0;
   display: flex;
-  // max-width: 100vh;
-  // overflow: scroll;
+  box-sizing: border-box;
 }
 
-.labels {
-  background-color: $light-grey;
-  display: flex;
-  gap: 8px;
-}
-.label {
-  @include font-main-text;
-  background-color: white;
-  padding: 8px 16px;
-  justify-content: center;
-  width: 100px;
-  border-radius: 24px;
-  border: 1px solid var(--Lenta-secondart-dark-blue, #b4c8ff);
+.container {
+  margin: 0 0 0 1.67vw;
+  max-width: calc(100vw - $sidebarWidth - 1.67vw * 2);
+  overflow: hidden;
 }
 
 .controls {
   @include flex(center);
   padding: 3.7vh 0 2.22vh;
   justify-content: end;
-}
-
-.switch {
-  display: flex;
-  gap: 1.25vw;
-  align-items: baseline;
-  align-self: center;
-}
-
-.title {
-  @include font-headers;
-  @extend %zero-spaces;
-  text-decoration: underline;
-  text-underline-offset: 0.74vh;
-  text-decoration-thickness: 0.185vh;
-  border-radius: 4px;
-}
-
-.statistics {
-  @include font-tabs;
-  @extend %zero-spaces;
-  background-color: inherit;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-  padding: 0.83vh 0.42vw;
-
-  &:hover {
-    background-color: $light-blue;
-  }
 }
 
 .buttons {
@@ -73,29 +31,6 @@
   border: none;
   cursor: pointer;
   border-radius: 12px;
-
-  &_chart {
-    color: $main-blue;
-    background-color: $white;
-    transition: all 0.3s;
-
-    &:hover {
-      background-color: $light-blue;
-    }
-
-    &:active {
-      background-color: $white;
-      color: $dark-blue;
-    }
-
-    &:disabled {
-      color: $light-grey;
-
-      &:hover {
-        background-color: $white;
-      }
-    }
-  }
 
   &_print {
     color: $main-blue;

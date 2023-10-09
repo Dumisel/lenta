@@ -4,7 +4,7 @@ import { useAppDispatch } from '../../utils/reduxHooks';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../components/ui/Button/Button';
 import ForecastTable from '../../components/Table/Table';
-import LabelsMenu from '../../components/Labels/LabelsMenu';
+import LabelsMenu from '../../components/LabelsMenu/LabelsMenu';
 import Filter from '../../components/Filter/Filter';
 import ForecastChart from '../../components/ForecastChart/ForecastChart';
 import { forecast } from '../../utils/forecast';
@@ -16,9 +16,9 @@ export default function ForecastPage() {
   return (
     <main
       id='forecast'
-      className={styles.forecast}>
+      className={styles.forecastChart}>
       <Filter />
-      <div className={styles.wrapper}>
+      <div className={styles.container}>
         {forecast.data.length > 5 &&
           <SendBackButton />
         }
