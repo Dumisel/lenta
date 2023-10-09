@@ -1,5 +1,4 @@
-// FilterSidebar.tsx
-import React, { BaseSyntheticEvent } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectAllCities,
@@ -13,13 +12,12 @@ import {
   toggleSku,
   reset
 } from '../../services/redux/slices/filter/filter';
-import { RootState } from '../../services/redux/store';
+import { AppDispatch, RootState } from '../../services/redux/store';
 import styles from './Filter.module.scss';
 import { storesData } from '../../utils/stores';
 import { categoriesData } from '../../utils/categories';
 import caret from '../../images/arrow.svg'
 import FilterButton from '../ui/FilterButton/FilterButton';
-
 
 const Filter: React.FC = () => {
   const [openFilters, setOpenFilters] = React.useState<string[]>([]);
@@ -32,17 +30,18 @@ const Filter: React.FC = () => {
     }
   };
 	
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
+
   const { selectedCities, selectedVenues, selectedGroups, selectedCategories, selectedSubcategories, selectedSku } = useSelector(
     (state: RootState) => state.filter
   );
-  const cities = storesData.data.map((item)=>item.city);
+  const cities = storesData.data.map((item: { city: string; })=>item.city);
   const filteredCities = Array.from(new Set(cities));
 
-  const stores = storesData.data.map((item)=>item.store);
+  const stores = storesData.data.map((item: { store: any; })=>item.store);
   const filteredStores = Array.from(new Set(stores));
 
-  const groups = categoriesData.data.map((item)=>item.group);
+  const groups = categoriesData?.data.map((item: { group: any; })=>item.group);
   const filteredGroups = Array.from(new Set(groups));
 
   const handleCityToggle = (city: string) => {
