@@ -111,6 +111,7 @@ export default function SignInPage() {
             className={styles.signIn__showPassword}
             type='button'
             onClick={togglePassword}
+            aria-label='show password'
             style={isPasswordHidden ? undefined : { backgroundImage: `url(${eye_opened})` }}
           />
         </div>
