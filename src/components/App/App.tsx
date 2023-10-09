@@ -13,6 +13,7 @@ import DataErrorPage from '../../pages/DataErrorPage/DataErrorPage';
 import ExportErrorPage from '../../pages/ExportErrorPage/ExportErrorPage';
 import PrintErrorPage from '../../pages/PrintErrorPage/PrintErrorPage';
 import ForecastChartPage from '../../pages/ForecastChartPage/ForecastChartPage';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 function App() {
   useEffect(() => {
@@ -50,31 +51,43 @@ function App() {
           element={<Layout />}>
           <Route
             index
-            element={<Dashboard />}
+            element={<ProtectedRoute children={<Dashboard />} />}
           />
+          <Route
+            path='/forecast'
+            element={<ProtectedRoute children={<ForecastPage />} />}
+          />
+          <Route
+            path='/forecast/chart'
+            element={<ProtectedRoute children={<ForecastChartPage />} />}
+          />
+
           <Route
             path='/signin'
             element={<SignInPage />}
           />
+
           <Route
-            path='/forecast'
-            element={<ForecastPage />}
+            path='*'
+            element={<NotFoundPage />}
+          />
+          {/** Тестовые страницы с ошибками */}
+          <Route
+            path='internet'
+            element={<InternetErrorPage />}
           />
           <Route
-            path='/forecast/chart'
-            element={<ForecastChartPage />}
+            path='data'
+            element={<DataErrorPage />}
           />
           <Route
-            path='/statistics'
-            element={<Dashboard />}
+            path='print'
+            element={<PrintErrorPage />}
           />
-          
-           <Route path="*" element={<NotFoundPage />} />
-             {/** Тестовые страницы с ошибками */}
-            <Route path="internet" element={<InternetErrorPage />} />
-            <Route path="data" element={<DataErrorPage />} />
-            <Route path="print" element={<PrintErrorPage />} />
-            <Route path="export" element={<ExportErrorPage />} />
+          <Route
+            path='export'
+            element={<ExportErrorPage />}
+          />
         </Route>
       </Routes>
     </div>

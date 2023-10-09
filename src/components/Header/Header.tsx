@@ -43,6 +43,7 @@ const Header: FC = () => {
             <button
               className={styles.header__logout}
               onClick={handleSignOut}
+              aria-label='logout'
             />
           </>
         ) : null}
